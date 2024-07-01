@@ -1,0 +1,30 @@
+export default {
+    COLORS: {
+      REDDARK: "#BF3834",
+      REDMID: "#F3A8AD",
+      REDLIGHT: "#F4E6E7",
+      GREENDARK: "#639339",
+      GREENMID: "#CCEEB4",
+      GREENLIGHT: "#E5F0DB",
+      GRAYS1: "#1B1D1E",
+      GRAYS2: "#36362A",
+      GRAYS3: "#5C6265",
+      GRAYS4: "#9B9B9C",
+      GRAYS5: "#DDEDEF",
+      GRAYS6: "#EFF0F0",
+      GRAYS7: "#FAFAFA",
+      WHITE: "#FFFFFF",
+    },
+    FONT_FAMILY: {
+      REGULAR: "NunitoSans_400Regular",
+      BOLD: "NunitoSans_700Bold",
+    },
+    FONT_SIZE: {
+      SM: "12px",
+      MD: "14px",
+      LG: "16px",
+      XL: "18px",
+      XXL: "24px",
+      EXL: "32px",
+    },
+  };
