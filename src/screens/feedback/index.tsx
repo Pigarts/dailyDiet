@@ -24,19 +24,22 @@ export function Feeedback() {
             <Heading type={type}>
                 {type === "GOOD" ? "Continue assim!" : "Que pena!"}
             </Heading>
-            <TextContainer>
             {
                 type === "GOOD" ?  
                 
-                <Description>
-                    Você continua <Strong>dentro da dieta. </Strong> Muito bem!
-                </Description> 
+            <TextContainer>
+               
+                  <Description>  Você continua </Description>  <Strong>dentro da dieta. </Strong> <Description>Muito bem! </Description> 
+             
+                </TextContainer>
+                
                 :
-                <Description>
-                     Você <Strong>saiu da dieta</Strong> dessa vez, mas continue se esforçando e não desista!
-                </Description>
+                <TextContainer>
+                <Description>  Você </Description> <Strong>saiu da dieta</Strong>  <Description> dessa vez, mas continue se esforçando e não desista!</Description>
+                </TextContainer>
+                   
+                
             }
-            </TextContainer>
             
             <Img source={type === "GOOD" ? require("@assets/IllustrationgoodFeedback.png" ) : require("@assets/IllustrationbadFeedback.png")}/>
 

@@ -1,6 +1,5 @@
 import { StatusBar, TouchableOpacityProps, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ArrowLeft } from "phosphor-react-native";
 import styled, { css } from "styled-components/native";
 
 export type headerTypeStyleProps = "GOOD" | "BAD";
@@ -80,7 +79,6 @@ export const Heading = styled.Text`
 
 export const Card = styled(View)<props>`
     gap: 8px;
-  
     padding: 16px;
     border-radius: 8px;
     flex-direction: column;
@@ -108,9 +106,3 @@ export const CardDescription = styled.Text`
     font-family: ${ theme.FONT_FAMILY.REGULAR};
     `};
     `
-
-export const Icon = styled(ArrowLeft).attrs<props>(({ theme, type }) => ({
-    size: 32,
-    color: type === "GOOD" ? theme.COLORS.GREENDARK : theme.COLORS.REDDARK
-}))`
-`

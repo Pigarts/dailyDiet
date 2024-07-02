@@ -1,14 +1,18 @@
 import { useNavigation } from "@react-navigation/native";
-import { BackButton, Container, HeaderColorStyleProp, HomeContainer, Icon, Title } from "./styles";
-import { Image, TouchableOpacity } from "react-native";
+import { BackButton, BigTitle, Container, Description, HeaderColorStyleProp, HomeContainer, Title } from "./styles";
+import { Image, TouchableOpacity, View } from "react-native";
+import { useTheme } from "styled-components";
+import { ArrowLeft } from "phosphor-react-native";
 
 type Props = {
     type?: HeaderColorStyleProp
     title?: string
+    description?: string
+
 }
 
-export function PageHeader({title, type}: Props) {
-
+export function PageHeader({title, type, description}: Props) {
+    const {COLORS} = useTheme()
     const navigate = useNavigation()
 
     function goHome() {
@@ -34,14 +38,25 @@ export function PageHeader({title, type}: Props) {
                 </TouchableOpacity>
                 </HomeContainer>
             :
-                <Container type={type}>
+     
+         
+              <Container type={type}>
                 <BackButton onPress={goHome} >
-                    <Icon/>
+                    <ArrowLeft 
+                        size={32}
+                        color={COLORS.GRAYS1}
+                        />
                 </BackButton>
-                <Title>
+                <View></View>
+                <BigTitle>
                     {title}
-                </Title>
+                </BigTitle>
+                <Description>
+                    {description}
+                </Description>
                 </Container>
+               
+     
         }
         </>
 

@@ -38,11 +38,3 @@ export const Description = styled.Text`
     color: ${ theme.COLORS.GRAYS2};
 `};
 `
-export const IconButton = styled(ArrowUpRight).attrs<props>(({ theme, type }) => ({
-    size: 32,
-    color: type === "PRIMARY" ? theme.COLORS.GREENDARK : theme.COLORS.REDDARK
-}))`
-    position: absolute;
-    top: 8px;
-    right: 8px;
-`

@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ArrowLeft } from "phosphor-react-native";
 
 export const Container = styled(SafeAreaView)`
     background-color: ${({theme}) => theme.COLORS.GRAYS5};
@@ -47,9 +46,3 @@ export const Form = styled.View`
     flex-direction: column;
     gap: 24px;
 `
-    
-export const Icon = styled(ArrowLeft).attrs(({ theme }) => ({
-        size: 32,
-        color: theme.COLORS.GRAYS1 
-    }))`
-    `

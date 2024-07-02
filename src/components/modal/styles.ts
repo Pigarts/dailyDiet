@@ -24,8 +24,6 @@ export const Title = styled.Text`
     font-size: ${ theme.FONT_SIZE.XL};
     font-family: ${ theme.FONT_FAMILY.BOLD};
     text-align: center;
-    
-    
     `};
 `
 

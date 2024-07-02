@@ -1,8 +1,7 @@
-import { ArrowLeft } from "phosphor-react-native"
 import { View } from "react-native"
 import styled, {css} from "styled-components/native"
 
-export type HeaderColorStyleProp = "GOOD" | "BAD" | "HOME"
+export type HeaderColorStyleProp = "GOOD" | "BAD" | "HOME" 
 
 type Props = {
     type?: HeaderColorStyleProp
@@ -27,10 +26,27 @@ export const Title = styled.Text`
     `};
 
 `
+export const BigTitle = styled.Text`
+    ${({theme}) => css`
+    color: ${ theme.COLORS.GRAYS1};
+    font-size: ${ theme.FONT_SIZE.EXL};
+    font-family: ${ theme.FONT_FAMILY.BOLD};
+    `};
+`
+export const Description = styled.Text`
+    ${({theme}) => css`
+    color: ${ theme.COLORS.GRAYS2};
+    font-size: ${ theme.FONT_SIZE.MD};
+    font-family: ${ theme.FONT_FAMILY.REGULAR};
+`};
+`
+
+
 export const BackButton = styled.TouchableOpacity`
 position: absolute;
 left: 24px;
 `
+
 export const HomeContainer = styled.View`
     flex: 1;
     min-height: 40px;
@@ -39,9 +55,4 @@ export const HomeContainer = styled.View`
     align-items: center;
     flex-direction: row;
     
-`
-export const Icon = styled(ArrowLeft).attrs(({ theme }) => ({
-    size: 32,
-    color: theme.COLORS.GRAYS1 
-}))`
 `

@@ -21,6 +21,6 @@ export const FadeUp = styled.Image`
   position: absolute;
   bottom: 10px;
  
-  pointer-events: none; /* Permite cliques passarem */
+  pointer-events: none; 
 
 `

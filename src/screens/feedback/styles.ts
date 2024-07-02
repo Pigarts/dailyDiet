@@ -24,14 +24,13 @@ export const Heading = styled(Text)<Props>`
 `
 export const TextContainer = styled.View`
         width: 100%;
-    justify-content: 'center';
-    align-items: 'center'; 
-
+        justify-content: 'center';
+        align-items: 'center'; 
 `
 
 export const Description = styled(Text)`
     text-align: center;
-    justify-content: center;
+    justify-self: center;
     font-size: ${({theme}) => theme.FONT_SIZE.LG};
     font-family: ${({theme}) => theme.FONT_FAMILY.REGULAR};
     color: ${({theme}) => theme.COLORS.GRAYS1 };
@@ -41,6 +40,8 @@ export const Strong = styled(Text)`
     font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
     color: ${({theme}) => theme.COLORS.GRAYS1 };;
     text-align: center;
+    justify-self: center;
+
     
     `
 export const Img = styled.Image`

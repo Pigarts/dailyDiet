@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { BackButton, Card, CardDescription, CardHeading, Container, Content, Description, Heading, Icon, PageHeader, StatusBarColor, Title } from "./styles";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { BackButton, Card, CardDescription, CardHeading, Container, Content, Description, Heading, PageHeader, StatusBarColor, Title } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 import { ActivityIndicator, View } from "react-native";
 import { FoodStorageDTO } from "src/DTOS/foodStorageDTO";
-import { GetFoodByTime } from "@storage/food/getByTime";
 import { foodGetAll } from "@storage/food/getAll";
+import { ArrowLeft } from "phosphor-react-native";
+import { useTheme } from "styled-components/native";
 
 export function Status() {
     const [totalFoods, setTotalFoods] = useState(0)
@@ -14,6 +15,8 @@ export function Status() {
     const [betterSequence, setBetterSequence] = useState(0)
     
     const [foods, setFoods] = useState<FoodStorageDTO[]>()
+    const {COLORS} = useTheme()
+   
     
     const navigation = useNavigation()
     
@@ -84,7 +87,7 @@ export function Status() {
             <PageHeader type={percentage > 50  ? "GOOD" : "BAD" }>
                 <BackButton onPress={handleackButton}>
                    
-                <Icon type={percentage > 50  ? "GOOD" : "BAD" }
+                <ArrowLeft  color={percentage > 50 ? COLORS.GREENDARK : COLORS.REDDARK}
                     />
 
                 </BackButton>
@@ -102,25 +105,27 @@ export function Status() {
                    <CardDescription>refeições registradas</CardDescription>
                 </Card>
 
-                <View style={
-                    {
-                        gap: 16,
-                        flexDirection: "row", 
-                    }
-                }>
+                <View style={{ flexDirection: "row", gap: 12, justifyContent: "space-between" }}>
 
                 <Card 
                     type={"GOOD"}
+                    style={{
+                          maxWidth: "48%",
+                          flex:1
+                    }}
                     >
                    <CardHeading> {goodFoods} </CardHeading>
-                   <CardDescription>refeições dentro da dieta</CardDescription>
+                   <CardDescription numberOfLines={5}>refeições dentro da dieta</CardDescription>
                 </Card>
-
                 <Card 
                     type={"BAD"}
+                    style={{
+                        maxWidth: "48%",
+                        flex:1
+                  }}
                     >
                    <CardHeading> {badFoods} </CardHeading>
-                   <CardDescription>refeições registradas</CardDescription>
+                   <CardDescription numberOfLines={5}>refeições fora da dieta</CardDescription>
                 </Card>
                     </View>
                 
